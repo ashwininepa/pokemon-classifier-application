@@ -10,7 +10,7 @@ RUN pip install --upgrade pip
 RUN pip3 install --no-cache -r requirements.txt
 
 # Expose the port the app runs on
-EXPOSE 8080
+EXPOSE 8081
 
 # Command to run the training script
-CMD ["uvicorn", "app.api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "app.api.main:app", "--host", "0.0.0.0", "--port", "8081"]
