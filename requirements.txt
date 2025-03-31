@@ -1,0 +1,10 @@
+numpy==2.2.4
+pillow==11.1.0
+requests==2.32.3
+transformers==4.50.3
+uvicorn==0.34.0
+fastapi==0.115.12
+pika==1.3.2
+slowapi==0.1.9
+torch
+python-multipart
