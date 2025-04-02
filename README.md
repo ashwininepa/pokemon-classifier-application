@@ -4,19 +4,33 @@ This is a containerized application that uses a pre-trained model from Hugging F
 
 ## Repository Structure
 pokemon-classifier-application/
+
 ├── app/
+
 │   ├── __init__.py          # Marks the app directory as a package
+
 │   ├── api/
+
 │   │   ├── __init__.py       # Marks the api directory as a package
+
 │   │   ├── main.py           # Main FastAPI application
+
 │   │   ├── security.py       # Security-related logic (e.g., API key validation)
+
 │   ├── utils/
+
 │   │   ├── __init__.py       # Marks the utils directory as a package
+
 │   │   ├── imageFunctions.py # Utility functions for image processing
+
 │   ├── model.py              # Code to load and use the Hugging Face model with pipeline
+
 ├── Dockerfile                # Docker configuration
+
 ├── requirements.txt          # Python dependencies
+
 ├── README.md                 # Documentation for the project
+
 
 ## Features
 - Exposes a REST API to classify Pokémon images.
