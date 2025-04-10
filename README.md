@@ -4,33 +4,19 @@ This is a containerized application that uses a pre-trained model from Hugging F
 
 ## Repository Structure
 pokemon-classifier-application/
-
 ├── app/
-
 │   ├── __init__.py          # Marks the app directory as a package
-
 │   ├── api/
-
 │   │   ├── __init__.py       # Marks the api directory as a package
-
 │   │   ├── main.py           # Main FastAPI application
-
 │   │   ├── security.py       # Security-related logic (e.g., API key validation)
-
 │   ├── utils/
-
 │   │   ├── __init__.py       # Marks the utils directory as a package
-
 │   │   ├── imageFunctions.py # Utility functions for image processing
-
 │   ├── model.py              # Code to load and use the Hugging Face model with pipeline
-
 ├── Dockerfile                # Docker configuration
-
 ├── requirements.txt          # Python dependencies
-
 ├── README.md                 # Documentation for the project
-
 
 ## Features
 - Exposes a REST API to classify Pokémon images.
@@ -55,7 +41,7 @@ docker run
     > t (try) allocates a psuedo-TTY (terminal) for the container, making it easier to interact with the container terminal
 > together, it is good for debugging or running containers interactively
 > -p 8081:8081 > maps a port from the container to the host machine (first one is accessible on host machine and second one is the container port)
-Allows to access the app running inside the container form host machine at http://localhost:8081
+Allows to access the app running inside the container from host machine at http://localhost:8081
 > name_of_app/image that tells docker which image to use to create a container
 > uvicron .... --reload 
    > uvicorn is a lightweight ASGI server used to run FastAPI applications
@@ -67,12 +53,10 @@ Allows to access the app running inside the container form host machine at http:
 3. Test the API: Use Postman
 4. Check the response for the classification result.
 
-
 Some useful docker commands:
 docker logs image_name/container_id
 docker ps
 docker info
-
 
 # Resources
 1. The model used in this task is from HuggingFace and can be found at 'https://huggingface.co/fufufukakaka/pokemon_image_classifier/blob/main/README.md?library=transformers'
