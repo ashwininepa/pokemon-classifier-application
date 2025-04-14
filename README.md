@@ -16,7 +16,7 @@ This is a containerized application that uses a pre-trained model from Hugging F
 1. Build the Docker image:
    ```bash
    docker build -t pokemon-classifier-api .
-2. docker run -it -p 8081:8081 pokemon-classifier-api uvicorn app.api.main:app --host 0.0.0.0 --port 8081 --reload
+2. docker run -it -p 8081:8081 pokemon-classifier-api uvicorn app.api.main:app --host 127.0.0.1 --port 8081 --reload
 
 docker run 
 > creates and start a new container from a specified docker image
