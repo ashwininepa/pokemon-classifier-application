@@ -8,6 +8,12 @@ COPY requirements.txt /app/requirements.txt
 RUN pip install --upgrade pip
 RUN pip3 install --no-cache-dir -r requirements.txt
 
+# Install hugging face cli tool
+RUN pip install --no-cache-dir huggingface-hub
+
+# Pre-download the model using the transformer-cli
+RUN python -c "from huggingface_hub import snapshot_download; snapshot_download(repo_id='fufufukakaka/pokemon_image_classifier', local_dir='/app/models/pokemon_image_classifier', local_dir_use_symlinks=False)"
+
 # Copy the rest of the application code into the container
 COPY . /app
 
