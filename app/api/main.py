@@ -26,7 +26,6 @@ logging.basicConfig(level=logging.INFO) # Set up basic logging configuration
 logging.info(f"Generated API Key: {api_key}")
 
 # Load the model at startup - ensures that it is ready to use when the first request comes in
-logging.info("Loading pre-trained model from HuggingFace...")
 model = load_model()
 
 @app.post("/classify/") # Define a POST endpoint at /classify/
