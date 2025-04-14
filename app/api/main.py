@@ -18,7 +18,7 @@ app = FastAPI()
 
 # Add security middlewares
 # Accepts requests from only specified hosts, enhancing security
-app.add_middleware(TrustedHostMiddleware, allowed_hosts=["localhost", "0.0.0.0", "127.0.0.1"])
+app.add_middleware(TrustedHostMiddleware, allowed_hosts=["localhost", "127.0.0.1"])
 
 # Generate API key at startup
 api_key = generate_api_key() # Generate a secure random API key (64 char hexadecimal string)
