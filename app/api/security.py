@@ -19,7 +19,7 @@ def secure_request(func):
     Decorator to validate the API key in incoming requests.
     """
     @wraps(func)
-    async def wrapper(*args, **kwargs):
+    async def wrapper(*args, **kwargs): # Retrieves incoming http request
         request: Request = kwargs.get("request")
         if not request:
             raise HTTPException(status_code=500, detail="Request object not found.")
@@ -27,7 +27,7 @@ def secure_request(func):
         # Validate the API key from headers
         api_key = request.headers.get("X-API-Key")
         if api_key != API_KEY:
-            raise HTTPException(status_code=403, detail="Invalid or missing API key.")
+            raise HTTPException(status_code=401, detail="Invalid or missing API key.")
         
         return await func(*args, **kwargs)
     return wrapper
