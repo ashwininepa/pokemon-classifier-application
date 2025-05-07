@@ -13,9 +13,12 @@ jobs:
     runs-on: ${{matrix.os}}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        python-version: [3.9, 3.12]
 
     steps:
     - uses: actions/checkout@v4
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag pokemon-classifier:$(date +%s)
+    - name: Build the Docker image with dynamic Python version
+      run: docker build . \
+        --file Dockerfile \
+        --build-arg PYTHON_VERSION=${{matrix.python-version}} \
+        --tag pokemon-classifier:${{matrix.python-version}}-$(date +%s)
