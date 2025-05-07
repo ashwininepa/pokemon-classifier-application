@@ -1,4 +1,5 @@
-FROM python:3.12-slim
+ARG PYTHON_VERSION=3.9
+FROM python:${PYTHON_VERSION}
 
 # Set the working directory in the container to /app
 WORKDIR /app
