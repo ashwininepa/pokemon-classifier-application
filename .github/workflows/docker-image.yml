@@ -11,8 +11,11 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.12, 3.13]
     
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image with dynamic Python version 
-      run: docker buildx build . --file Dockerfile --build-arg PYTHON_VERSION=3.12 --tag pokemon-classifier:3.12-$(date +%s)
+      run: docker buildx build . --file Dockerfile --build-arg PYTHON_VERSION=${{ matrix.python-version }} --tag pokemon-classifier:${{ matrix.python-version }}-$(date +%s)
