@@ -15,7 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image with dynamic Python version 
-      run: docker buildx build . \
-        --file Dockerfile \
-        --build-arg PYTHON_VERSION=3.9 \
-        --tag pokemon-classifier:3.9-$(date +%s)
+      run: docker buildx build . --file Dockerfile --build-arg PYTHON_VERSION=3.9 --tag pokemon-classifier:3.9-$(date +%s)
